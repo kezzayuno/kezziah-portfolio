@@ -1,0 +1,11 @@
+# data/en/author.yaml
+
+name: "kezziah ayuno"
+nickname: "kezziah"
+greeting: "hello, i am"
+image: "images/avatar.png"
+
+summary:
+  - "technical writer"
+  - "computer science and psychology graduate"
+  - "lover of all things tech and human"
