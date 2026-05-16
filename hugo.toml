@@ -1,7 +1,31 @@
 baseURL = "https://kezzayuno.github.io/kezziah-portfolio/"
 languageCode = "en-us"
-title = "Kezziah Ayuno"
+title = "kezziah's portfilo"
+
+[params.logo]
+  favicon = "images/site/favicon.png"
 
 [module]
   [[module.imports]]
     path = "github.com/hugo-toha/toha/v4"
+
+[params]
+  background = "/images/site/background.png"
+
+[params.topNavbar]
+  maxVisibleSections = 5
+
+[[params.customMenus]]
+  name = "writing samples"
+  url = "/writing-samples/"
+  weight = 1
+
+[[params.customMenus]]
+  name = "projects"
+  url = "/projects/"
+  weight = 2
+
+[[params.customMenus]]
+  name = "about"
+  url = "/about/"
+  weight = 3
