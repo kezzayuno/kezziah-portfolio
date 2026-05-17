@@ -17,15 +17,15 @@ title = "kezziah's portfilo"
 
 [[params.customMenus]]
   name = "writing samples"
-  url = "/writing-samples/"
+  url = "writing-samples/"
   weight = 1
 
 [[params.customMenus]]
   name = "projects"
-  url = "/projects/"
+  url = "projects/"
   weight = 2
 
 [[params.customMenus]]
   name = "about"
-  url = "/about/"
+  url = "about/"
   weight = 3

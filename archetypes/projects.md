@@ -1,34 +1,16 @@
 ---
-title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: "{{ .Date }}"
+title: {{ replace .File.ContentBaseName "-" " " | title }}
+publish-date: {{ dateFormat "2006-01-02" .Date }}
+last-mod: {{ dateFormat "2006-01-02" .Date }}
 draft: true
-description: ""
-summary: ""
-role: ""
-tools: []
-repo: ""
-demo: ""
+description: TODO
+role: TODO
+weight: 10
+status: Set as draft, in progress, ongoing, complete, archived
+start-date: {{ dateFormat "2006-01-02" .Date }}
+end-date: {{ dateFormat "2006-01-02" .Date }}
 ---
 
-## Overview
+Describe the project, tools used, and role.
 
-Briefly describe the project.
-
-## Purpose
-
-Explain why you created it and what problem it solves.
-
-## My Role
-
-Describe what you did.
-
-## Tools Used
-
-- Hugo
-- Markdown
-- Git
-- GitHub
-
-## Outcome
-
-Describe the final result and what the project demonstrates.
+Add demo or archived pages of the project.

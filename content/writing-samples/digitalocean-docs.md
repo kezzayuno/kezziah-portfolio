@@ -1,14 +1,14 @@
 ---
-title: {{ replace .File.ContentBaseName "-" " " | title }}
-publish-date: {{ dateFormat "2006-01-02" .Date }}
-last-mod: {{ dateFormat "2006-01-02" .Date }}
+title: Digitalocean Docs
+publish-date: 2026-05-16
+last-mod: 2026-05-16
 draft: true
 description: TODO
 role: TODO
 weight: 10
 status: Set as draft, in progress, ongoing, complete, archived
-start-date: {{ dateFormat "2006-01-02" .Date }}
-end-date: "{{ dateFormat "2006-01-02" .Date }}
+start-date: 2026-05-16
+end-date: 2026-05-16
 ---
 
 Briefly describe the writing sample.
