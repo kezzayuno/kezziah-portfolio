@@ -17,6 +17,23 @@
   margin: 0.6rem auto 0 !important;
 }
 
+/* Use the same background across all content pages. */
+body:not(.kind-home) {
+  background-image: url("/kezziah-portfolio/images/site/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Make Toha page wrappers transparent so the background shows through. */
+body:not(.kind-home) .wrapper,
+body:not(.kind-home) .content-section,
+body:not(.kind-home) .content,
+body:not(.kind-home) main {
+  background: transparent !important;
+}
+
 /* Hide the built-in Home tab because the site title links home. */
 .top-navbar .navbar-nav .nav-item:first-child {
   display: none !important;
@@ -62,72 +79,89 @@
 @media (max-width: 998px) {
   .top-navbar,
   html[data-theme='dark'] .top-navbar {
-    background: rgba(31, 41, 55, 0.55) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    height: 50px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .top-navbar .navbar-brand,
+  .top-navbar.transparent-navbar .navbar-brand,
+  html[data-theme='dark'] .top-navbar .navbar-brand {
+    color: #cbd5e1 !important;
   }
 
   .top-navbar .container {
-    background: transparent !important;
     position: relative !important;
+    background: transparent !important;
+    max-width: 100% !important;
   }
 
   .top-navbar #top-navbar-divider {
     display: none !important;
   }
 
-  .top-navbar .navbar-toggler {
+  .top-navbar .navbar-toggler,
+  .top-navbar.transparent-navbar .navbar-toggler,
+  html[data-theme='dark'] .top-navbar .navbar-toggler {
     position: absolute !important;
     top: 0.35rem !important;
     right: 1rem !important;
     width: 2rem !important;
     height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
     background: transparent !important;
   }
 
-  .top-navbar .navbar-toggler svg,
-  .top-navbar .navbar-toggler img,
-  .top-navbar .navbar-toggler .navbar-toggler-icon,
-  .top-navbar .navbar-toggler .feather-menu {
+  .top-navbar .navbar-toggler *,
+  .top-navbar.transparent-navbar .navbar-toggler *,
+  html[data-theme='dark'] .top-navbar .navbar-toggler * {
     display: none !important;
   }
 
-  /* Closed state by default. */
-  .top-navbar .navbar-toggler::after {
-    content: "";
-    display: block;
-    width: 1.75rem;
-    height: 1.75rem;
-    background-color: #e4e4e7;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15 5L8 12L15 19' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15 5L8 12L15 19' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
+  /* Closed state. */
+  .top-navbar .navbar-toggler::after,
+  .top-navbar.transparent-navbar .navbar-toggler::after,
+  html[data-theme='dark'] .top-navbar .navbar-toggler::after {
+    content: "‹";
+    display: block !important;
+    color: #e4e4e7 !important;
+    font-family: inherit !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
   }
 
   /* Open state. */
-  .top-navbar .navbar-toggler[aria-expanded="true"]::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 9L12 16L19 9' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 9L12 16L19 9' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  .top-navbar .navbar-toggler[aria-expanded="true"]::after,
+  .top-navbar.transparent-navbar .navbar-toggler[aria-expanded="true"]::after,
+  html[data-theme='dark'] .top-navbar .navbar-toggler[aria-expanded="true"]::after {
+    content: "⌄";
+    font-size: 1.7rem !important;
   }
 
   .top-navbar .navbar-collapse.show,
   .top-navbar .navbar-collapse.collapsing,
   html[data-theme='dark'] .top-navbar .navbar-collapse.show,
   html[data-theme='dark'] .top-navbar .navbar-collapse.collapsing {
-    display: flex !important;
-    justify-content: flex-end !important;
-    margin-top: 2.25rem !important;
-    padding: 0 1rem 1rem 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
+    position: absolute !important;
+    top: 3rem !important;
+    right: 1rem !important;
+    width: fit-content !important;
+    min-width: 12rem;
+    margin: 0 !important;
+    padding: 0.75rem 1rem !important;
+    background: rgba(31, 41, 55, 0.38) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    border-radius: 0.4rem;
     border-top: none !important;
   }
 
@@ -148,7 +182,7 @@
   html[data-theme='dark'] .top-navbar .navbar-collapse.collapsing .navbar-nav .nav-link {
     width: fit-content !important;
     text-align: right !important;
-    padding: 0.35rem 0 !important;
+    padding: 0.35rem 0.5rem !important;
     border-radius: 0.16em !important;
     color: #e4e4e7 !important;
     border-bottom: none !important;
@@ -161,8 +195,6 @@
   .top-navbar .navbar-collapse.collapsing .navbar-nav .active {
     color: #e4e4e7 !important;
     background: rgba(0, 0, 0, 0.24) !important;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
     border-bottom: none !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
